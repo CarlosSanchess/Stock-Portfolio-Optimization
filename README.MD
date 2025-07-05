@@ -4,6 +4,10 @@
 
 The **Portfolio Optimization Tool** is a project aimed at addressing financial portfolio allocation challenges using metaheuristic optimization algorithms. It leverages historical stock price data from the Australian Securities Exchange (ASX) to analyze and optimize portfolios, providing a user-friendly interface for visualization and decision-making. We think that a future roadmap of improvements, would involve making this tool integrate easily with other csv historical data from different datasets and historical market info.
 
+## Project Made with:
+   - [João Rebelo](https://github.com/jrebelo08)
+   - [Gonçalo Sousa](https://github.com/goncalosousa4)
+
 ## GUI Screenshot
 <div align="center">
 <img src="imgs/view.png" width="800" alt="GUI"/>
