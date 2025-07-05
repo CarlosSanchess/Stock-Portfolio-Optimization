@@ -1,0 +1,207 @@
+\documentclass{beamer}
+\usepackage{graphicx} % For including images (if needed)
+\usepackage{hyperref} % For adding clickable links to references
+\usepackage{cite} % For managing references and citations
+
+\title{Portfolio Optimization Using Metaheuristic Algorithms}
+\subtitle{Artificial Intelligence Report}
+\author{
+    Carlos Sanches, up202107694 \\
+    João Rebelo, up202107209 \\
+    Gonçalo Sousa, up202207320
+}
+
+\setbeamertemplate{date}{}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Slide 1: Problem Specification
+\begin{frame}
+    \frametitle{Problem Specification}
+    \textbf{Portfolio Optimization Tool}
+
+    \textbf{Objective:} Develop a robust tool to optimize investment portfolios using metaheuristic algorithms.
+
+    \textbf{Key Features:}
+    \begin{itemize}
+        \item Determine optimal asset allocation to maximize returns while minimizing risk.
+        \item Support multiple optimization algorithms (Hill Climbing, Simulated Annealing, Tabu Search, Genetic Algorithm).
+        \item Allow customizable constraints (max/min weights, risk aversion, short selling).
+        \item Provide interactive visualization of optimization results.
+    \end{itemize}
+
+    \textbf{Expected Outcome:} A user-friendly application that produces efficient portfolios based on historical data from Australian Stock Market (2000-2020).
+\end{frame}
+
+% Slide 2: Related Work
+\begin{frame}
+    \frametitle{Related Work}
+    \textbf{Literature Review}
+
+    \textbf{Modern Portfolio Theory (MPT):}
+    \begin{itemize}
+        \item Markowitz, H. (1952). "Portfolio Selection." Journal of Finance, 7(1), 77-91.
+        \item Introduced mean-variance optimization framework for portfolio construction.
+    \end{itemize}
+
+    \textbf{Metaheuristic Approaches:}
+    \begin{itemize}
+        \item Chang, T.J., et al. (2000). "Heuristics for cardinality constrained portfolio optimisation." Computers \& Operations Research, 27(13), 1271-1302.
+        \item Cura, T. (2009). "Particle swarm optimization approach to portfolio optimization." Nonlinear Analysis: Real World Applications, 10(4), 2396-2406.
+    \end{itemize}
+
+    \textbf{Dataset and Software implementation}
+    \begin{itemize}
+        \item Australian Historical Stock Prices Dataset and Notebooks.
+        \item \url{https://www.kaggle.com/datasets/ashbellett/australian-historical-stock-prices/data}
+    \end{itemize}
+\end{frame}
+
+% Slide 3: Problem Formulation
+\begin{frame}
+    \frametitle{Problem Formulation}
+    \textbf{Portfolio Optimization as an Optimization Problem}
+
+    \textbf{Solution Representation:}
+    \begin{itemize}
+        \item Vector $w = (w_1, w_2, ..., w_n)$ representing portfolio weights for $n$ assets.
+        \item Constraint: $\sum_{i=1}^{n} w_i = 1$.
+    \end{itemize}
+
+    \textbf{Objective Function:}
+    \[
+    U(w) = E[R_p] - \lambda \cdot \sigma_p^2
+    \]
+    Where:
+    \begin{itemize}
+        \item $E[R_p] = \sum_{i=1}^{n} w_i \cdot \mu_i$ (expected portfolio return).
+        \item $\sigma_p^2 = w^T \Sigma w$ (portfolio variance).
+        \item $\lambda$ is risk aversion parameter.
+    \end{itemize}
+    Maximize $U(w)$ or Sharpe ratio $\frac{E[R_p]}{\sigma_p}$.
+
+    \textbf{Constraints:}
+    \begin{itemize}
+        \item Weight bounds: $0 \leq w_i \leq max\_weight$ (without short selling).
+        \item With short selling: $-1 \leq w_i \leq 1$.
+        \item Minimum return: $E[R_p] \geq min\_return$.
+        \item Maximum risk: $\sigma_p \leq max\_risk$.
+    \end{itemize}
+\end{frame}
+
+% Slide 4: Algorithms and Operators
+\begin{frame}
+    \frametitle{Algorithms and Operators}
+    \textbf{Metaheuristic Approach}
+
+    \textbf{Hill Climbing:}
+    \begin{itemize}
+        \item Neighborhood function: Random perturbation of weights with step size.
+        \item Restart mechanism to avoid local optima.
+    \end{itemize}
+
+    \textbf{Simulated Annealing:}
+    \begin{itemize}
+        \item Temperature schedule: Initial\_temp $\times$ Cooling\_rate$^{iteration}$.
+        \item Acceptance probability: $e^{\frac{\Delta U}{T}}$ for negative utility changes.
+    \end{itemize}
+
+    \textbf{Tabu Search:}
+    \begin{itemize}
+        \item Tabu list: Recent weight configurations to avoid cycling.
+        \item Aspiration criterion: Accept tabu moves if they improve best solution.
+    \end{itemize}
+
+    \textbf{Genetic Algorithm:}
+    \begin{itemize}
+        \item Crossover: Weighted average of parent solutions.
+        \item Mutation: Random perturbation with mutation rate.
+        \item Selection: Tournament selection with elitism.
+    \end{itemize}
+\end{frame}
+%Slide 5: Results Overview and thou 
+
+\begin{frame}{Our Analysis}
+
+    
+    \textbf{Common test scenarios for all Algorithms:}
+    \begin{itemize}
+        \item TODO.
+        \item TODO.
+        \item TODO.
+    \end{itemize}
+    \vspace{4 pt}
+    \textbf{Specific Analysis:}
+    \begin{itemize}
+        \item \textbf{Hill Climbing:}
+        \item \textbf{Simulated Annealing:}
+        \item \textbf{Tabu Search:}Aspiration criteria and Tabu
+        Tenure impact.
+        \item \textbf{Genetic Algorithm:}
+
+    \end{itemize}
+    
+
+\end{frame}
+
+\begin{frame}{Hill Climbing}
+
+    
+    
+
+\end{frame}
+
+
+\begin{frame}{Simulated Anealing}
+
+    
+    
+
+\end{frame}
+
+\begin{frame}{Tabu Search}
+
+    
+    
+
+\end{frame}
+% Slide 5: Implementation Details
+\begin{frame}
+    \frametitle{Implementation Details}
+
+    \textbf{Programming Language:} Python 3.
+
+    \textbf{Development Environment:}
+    \begin{itemize}
+        \item GUI: Tkinter framework.
+        \item Visualization: Matplotlib for interactive plots.
+    \end{itemize}
+
+    \textbf{Key Data Structures:}
+    \begin{itemize}
+        \item pandas.DataFrame for historical price data and returns calculation.
+        \item NumPy arrays for efficient matrix operations.
+    \end{itemize}
+
+    \textbf{Current Progress:}
+    \begin{itemize}
+        \item Complete GUI implementation with data loading capabilities.
+        \item Hill Climbing algorithm implementation.
+        \item Performance visualization (portfolio pie chart, allocation details risk rate, annual return etc).
+        \item Data preprocessing and portfolio metrics calculation.
+    \end{itemize}
+
+    \textbf{Next Steps:}
+    \begin{itemize}
+        \item Implement remaining optimization algorithms.
+        \item Add comparative performance evaluation.
+        \item Improve data visualization and insights about the portfolio.
+    \end{itemize}
+\end{frame}
+
+\end{document}
